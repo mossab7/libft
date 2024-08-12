@@ -2,7 +2,9 @@
 #define LIBFT_H
 #include <string.h>
 int ft_atoi(const char *str);
+char *ft_strsub(char const *s, unsigned char start, size_t len);
 void ft_strclr(char *s);
+char *ft_strtrim(char const *s);
 int ft_strequ(char const *s1, char const *s2);
 void ft_strdel(char **as);
 void *ft_memalloc(size_t size);
