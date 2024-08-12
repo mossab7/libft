@@ -120,9 +120,6 @@ int test_ft_strdup() {
     return 0;
 }
 
-// ... [Previous includes and macro definitions remain the same]
-
-// Add these new test functions:
 
 int test_ft_strdel() {
     char *str = ft_strdup("Test");
