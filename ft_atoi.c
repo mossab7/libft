@@ -5,7 +5,7 @@ int ft_atoi(const char *str)
   int result;
   sign = 1;
   result = 0;
-  if(ft_isspace(*str))
+  while(ft_isspace(*str))
     str++;
   while(*str == '-' || *str == '+')
   {
@@ -13,7 +13,7 @@ int ft_atoi(const char *str)
       sign *= -1;
     str++;
   }
-  while(ft_isalnum(*str))
+  while(ft_isdigit(*str))
   {
     result = (result * 10) + (*str - '0');
     str++;
