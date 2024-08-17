@@ -1,4 +1,5 @@
 #include "libft.h"
+
 char	*ft_strstr(const char *str, const char *to_find)
 {
 	int	j;
@@ -17,9 +18,9 @@ char	*ft_strstr(const char *str, const char *to_find)
 			if (!to_find[j + 1])
 				return ((char *)(str + i));
 			else
-				j ++;
+				j++;
 		}
-		i ++;
+		i++;
 	}
 	return (0);
 }

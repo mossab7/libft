@@ -1,8 +1,9 @@
-#include <string.h>
 #include "libft.h"
+#include <string.h>
+
 char	*ft_strcat(char *dest, const char *src)
 {
-	size_t		destlen;
+	size_t	destlen;
 	char	*original;
 
 	original = dest;
@@ -10,8 +11,8 @@ char	*ft_strcat(char *dest, const char *src)
 	while (*src)
 	{
 		*(dest + destlen) = *src;
-		destlen ++;
-		src ++;
+		destlen++;
+		src++;
 	}
 	*(dest + destlen) = '\0';
 	return (original);

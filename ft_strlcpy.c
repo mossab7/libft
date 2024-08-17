@@ -1,5 +1,6 @@
-#include <string.h>
 #include "libft.h"
+#include <string.h>
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
@@ -12,7 +13,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
-		i ++;
+		i++;
 	}
 	dest[i] = '\0';
 	return (srclen);

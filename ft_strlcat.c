@@ -1,4 +1,5 @@
 #include "libft.h"
+
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	lensrc;
@@ -16,7 +17,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	while (src[i] && lendest + i < size - 1)
 	{
 		dest[(lendest + i)] = src[i];
-		i ++;
+		i++;
 	}
 	dest[(lendest + i)] = '\0';
 	nlen = lensrc + lendest;

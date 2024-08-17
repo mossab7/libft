@@ -1,10 +1,11 @@
-#include <string.h>
 #include <stdlib.h>
-void ft_memdel(void **ap)
+#include <string.h>
+
+void	ft_memdel(void **ap)
 {
-  if(ap != NULL && *ap != NULL)
-  {
-    free(*ap);
-    *ap = NULL;
-  }
+	if (ap != NULL && *ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }
