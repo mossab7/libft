@@ -1,6 +1,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+typedef struct s_list 
+{
+ void *content;
+ struct s_list  *next;
+} t_list;
 int		ft_atoi(const char *str);
 void	ft_putendl_fd(char const *s,int fd);
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
