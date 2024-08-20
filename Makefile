@@ -31,8 +31,8 @@ HEADER = libft.h
 # Rules
 all: $(NAME)
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -46,6 +46,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus
