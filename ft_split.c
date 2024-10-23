@@ -6,12 +6,23 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:28 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:18:39 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/23 14:33:12 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static void	*free_str(char ***strptr, size_t j)
+{
+	if (strptr && !(*strptr))
+	{
+		while (j > 0)
+			free((*strptr)[--j]);
+		free(*strptr);
+		return (NULL);
+	}
+}
 
 char	**ft_split(char *str, char c)
 {
@@ -32,13 +43,8 @@ char	**ft_split(char *str, char c)
 			break ;
 		strlen = ft_wordlen(str, c);
 		strptr[j] = ft_strndup(str, strlen);
-		if(!strptr[j])
-		{
-			while(j > 0)
-				free(strptr[--j]);
-			free(strptr);
-			return NULL;
-		}
+		if (!strptr[j])
+			return (free_str(&strptr, j));
 		j++;
 		str += strlen;
 	}

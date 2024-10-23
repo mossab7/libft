@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 # Source files
-SRCS = ft_atoi.c ft_strsub.c ft_countwords.c ft_split.c ft_strdup.c ft_wordlen.c ft_strclr.c \
+SRCS = ft_atoi.c ft_countwords.c ft_split.c ft_strdup.c ft_wordlen.c ft_strclr.c \
        ft_strtrim.c ft_strequ.c ft_strdel.c ft_calloc.c ft_strnew.c ft_memdel.c ft_isspace.c \
        ft_isalnum.c ft_bzero.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memccpy.c \
        ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strcat.c ft_strcmp.c \

@@ -6,7 +6,7 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:08:49 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:08:51 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/23 14:08:04 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	ft_putnbr(int n);
 size_t	ft_numlen(int n);
 void	ft_putchar(char c);
 void	ft_putendl(char const *s);
-char	*ft_strsub(char const *s, unsigned int start, size_t len);
 void	ft_putstr(char const *s);
 size_t	ft_countwords(char *str, char c);
 int		ft_issep(char c, char *charset);
