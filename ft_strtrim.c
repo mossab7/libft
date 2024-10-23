@@ -13,6 +13,20 @@
 #include "libft.h"
 #include <stdlib.h>
 
+static int	ft_issep(char c, char *charset)
+{
+	int	i;
+
+	i = 0;
+	while (charset[i])
+	{
+		if (charset[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	size;

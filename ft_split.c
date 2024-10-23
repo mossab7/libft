@@ -13,6 +13,40 @@
 #include "libft.h"
 #include <stdlib.h>
 
+static size_t	ft_wordlen(const char *str, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (*str && *str == c)
+		str++;
+	while (*str && !(*str == c))
+	{
+		len++;
+		str++;
+	}
+	return (len);
+}
+
+static size_t	ft_countwords(char *str, char c)
+{
+	size_t	len;
+	size_t	i;
+
+	len = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && (str[i] == c))
+			i++;
+		if (str[i] && !(str[i] == c))
+			len++;
+		while (str[i] && !(str[i] == c))
+			i++;
+	}
+	return (len);
+}
+
 static void	*free_str(char ***strptr, size_t j)
 {
 	if (strptr && !(*strptr))
