@@ -6,14 +6,15 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:34 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:04:34 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/23 09:19:19 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_print_result(char const *s)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	while (s[len])
@@ -21,11 +22,12 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-int		main(int argc, const char *argv[])
+int	main(int argc, const char *argv[])
 {
 	char	str[] = "lorem ipsum dolor sit amet";
 	char	*strsub;
 	int		arg;
+		char *bullshit;
 
 	if (argc == 1)
 		return (0);
@@ -67,7 +69,6 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 5)
 	{
-		char *bullshit;
 		if (!(strsub = ft_substr(str, 400, 20)))
 			ft_print_result("NULL");
 		else
