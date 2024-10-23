@@ -13,16 +13,22 @@
 #include "libft.h"
 #include "stdlib.h"
 
-char	*ft_strsub(char const *s, unsigned char start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
+	size_t	slen;
+	size_t	sublen;
 
 	if (!s)
 		return (NULL);
+	slen = ft_strlen(s); 
+	if(slen > start)
+		sublen = slen - start;
+	if(sublen > len)
+		sublen = len;
 	substr = (char *)malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
-	ft_strncpy(substr, (s + start), len);
-	substr[len] = '\0';
+	ft_strlcpy(substr, (s + start), sublen);
 	return (substr);
 }
