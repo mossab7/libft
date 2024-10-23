@@ -20,8 +20,8 @@ static void	*free_str(char ***strptr, size_t j)
 		while (j > 0)
 			free((*strptr)[--j]);
 		free(*strptr);
-		return (NULL);
 	}
+	return (NULL);
 }
 
 char	**ft_split(char *str, char c)
