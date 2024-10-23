@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-size_t	ft_wordlen(const char *str, char *charset)
+size_t	ft_wordlen(const char *str, char c)
 {
 	size_t	len;
 
 	len = 0;
-	while (*str && ft_issep(*str, charset))
+	while (*str && *str == c)
 		str++;
-	while (*str && !ft_issep(*str, charset))
+	while (*str && !(*str == c))
 	{
 		len++;
 		str++;

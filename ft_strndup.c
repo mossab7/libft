@@ -16,10 +16,16 @@
 char	*ft_strndup(const char *src, size_t size)
 {
 	char	*dest;
+	size_t	len;
 
-	dest = (char *)malloc((size + 1) * sizeof(char));
+	len = 0;
+	while(len < size && src[len])
+		len++;
+
+	dest = (char *)malloc((len + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	ft_strncpy(dest, src, size);
+	ft_strncpy(dest, src, len);
+	dest[len] = '\0';
 	return (dest);
 }

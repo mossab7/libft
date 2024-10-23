@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_countwords(char *str, char *charset)
+size_t	ft_countwords(char *str, char c)
 {
 	size_t	len;
 	size_t	i;
@@ -21,11 +21,11 @@ size_t	ft_countwords(char *str, char *charset)
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_issep(str[i], charset))
+		while (str[i] && (str[i] == c))
 			i++;
-		if (str[i] && !(ft_issep(str[i], charset)))
+		if (str[i] && !(str[i] == c))
 			len++;
-		while (str[i] && !(ft_issep(str[i], charset)))
+		while (str[i] && !(str[i] == c))
 			i++;
 	}
 	return (len);
