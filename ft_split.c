@@ -49,13 +49,29 @@ static size_t	ft_countwords(char *str, char c)
 
 static void	*free_str(char ***strptr, size_t j)
 {
-	if (strptr && !(*strptr))
+	if (strptr && *strptr)
 	{
 		while (j > 0)
 			free((*strptr)[--j]);
 		free(*strptr);
 	}
 	return (NULL);
+}
+
+static char	*ft_strndup(const char *src, size_t size)
+{
+	char	*dest;
+	size_t	len;
+
+	len = 0;
+	while (len < size && src[len])
+		len++;
+	dest = (char *)malloc((len + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	ft_strncpy(dest, src, len);
+	dest[len] = '\0';
+	return (dest);
 }
 
 char	**ft_split(char *str, char c)

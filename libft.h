@@ -45,7 +45,6 @@ void	ft_putchar(char c);
 void	ft_putendl(char const *s);
 void	ft_putstr(char const *s);
 char	**ft_split(char *str, char c);
-char	*ft_strndup(const char *src, size_t size);
 void	ft_strclr(char *s);
 char	*ft_strtrim(char const *s, char const *set);
 int		ft_strequ(char const *s1, char const *s2);
