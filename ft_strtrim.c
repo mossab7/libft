@@ -6,12 +6,30 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:33 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:19:16 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/25 21:03:43 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static char	*ft_strncpy(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
+}
 
 static int	ft_issep(char c, char *charset)
 {

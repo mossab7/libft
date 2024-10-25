@@ -6,12 +6,43 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:30 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:18:42 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/25 16:13:38 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static char	*ft_strcat(char *dest, const char *src)
+{
+	size_t	destlen;
+	char	*original;
+
+	original = dest;
+	destlen = ft_strlen(dest);
+	while (*src)
+	{
+		*(dest + destlen) = *src;
+		destlen++;
+		src++;
+	}
+	*(dest + destlen) = '\0';
+	return (original);
+}
+
+static char	*ft_strcpy(char *dest, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

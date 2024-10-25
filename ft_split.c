@@ -6,7 +6,7 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:28 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 14:33:12 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/25 21:32:29 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,14 @@ static void	*free_str(char ***strptr, size_t j)
 	return (NULL);
 }
 
-static char	*ft_strndup(const char *src, size_t size)
-{
-	char	*dest;
-	size_t	len;
-
-	len = 0;
-	while (len < size && src[len])
-		len++;
-	dest = (char *)malloc((len + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	ft_strncpy(dest, src, len);
-	dest[len] = '\0';
-	return (dest);
-}
-
 char	**ft_split(char *str, char c)
 {
 	size_t	j;
 	size_t	strlen;
 	char	**strptr;
 
+	if(!str)
+		return (NULL);
 	j = ft_countwords(str, c);
 	strptr = (char **)malloc((j + 1) * sizeof(char *));
 	if (strptr == NULL)
@@ -92,7 +78,7 @@ char	**ft_split(char *str, char c)
 		if (*str == '\0')
 			break ;
 		strlen = ft_wordlen(str, c);
-		strptr[j] = ft_strndup(str, strlen);
+		strptr[j] = ft_substr(str, 0, strlen);
 		if (!strptr[j])
 			return (free_str(&strptr, j));
 		j++;

@@ -6,11 +6,16 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:33 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/23 09:19:18 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/25 20:18:05 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_islower(int c)
+{
+	return ((c >= 'a' && c <= 'z'));
+}
 
 int	ft_toupper(int c)
 {
