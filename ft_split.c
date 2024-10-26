@@ -6,7 +6,7 @@
 /*   By: mbouhia <mbouhia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:04:28 by mbouhia           #+#    #+#             */
-/*   Updated: 2024/10/25 21:32:29 by mbouhia          ###   ########.fr       */
+/*   Updated: 2024/10/26 12:37:00 by mbouhia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_split(char *str, char c)
 	size_t	strlen;
 	char	**strptr;
 
-	if(!str)
+	if (!str)
 		return (NULL);
 	j = ft_countwords(str, c);
 	strptr = (char **)malloc((j + 1) * sizeof(char *));
@@ -78,10 +78,9 @@ char	**ft_split(char *str, char c)
 		if (*str == '\0')
 			break ;
 		strlen = ft_wordlen(str, c);
-		strptr[j] = ft_substr(str, 0, strlen);
-		if (!strptr[j])
-			return (free_str(&strptr, j));
-		j++;
+		strptr[j++] = ft_substr(str, 0, strlen);
+		if (!strptr[j - 1])
+			return (free_str(&strptr, --j));
 		str += strlen;
 	}
 	strptr[j] = NULL;

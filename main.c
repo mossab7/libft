@@ -3,8 +3,8 @@
 
 int main()
 {
-    char *str = NULL;
-    char **split =  ft_split(NULL,' ');
+    char *str = "hello world mother fuckers!";
+    char **split =  ft_split(str,' ');
     if(!split)
         return 0;
     for(int i = 0; i < 4;i++)
